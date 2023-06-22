@@ -1,0 +1,48 @@
+private int votosCarroceria1 = 0;
+private int votosCarroceria2 = 0;
+private int votosCarroceria3 = 0;
+private int totalVotos = 0;
+
+----------------------------------------------------------------
+botonCarroceria1.Click += VotarCarroceria1;
+botonCarroceria2.Click += VotarCarroceria2;
+botonCarroceria3.Click += VotarCarroceria3;
+
+
+----------------------------------------------------------------
+
+private void VotarCarroceria1(object sender, EventArgs e)
+{
+    votosCarroceria1++;
+    totalVotos++;
+    ActualizarResultados();
+}
+
+private void VotarCarroceria2(object sender, EventArgs e)
+{
+    votosCarroceria2++;
+    totalVotos++;
+    ActualizarResultados();
+}
+
+private void VotarCarroceria3(object sender, EventArgs e)
+{
+    votosCarroceria3++;
+    totalVotos++;
+    ActualizarResultados();
+}
+
+private void ActualizarResultados()
+{
+    etiquetaVotosCarroceria1.Text = $"Votos: {votosCarroceria1}";
+    etiquetaVotosCarroceria2.Text = $"Votos: {votosCarroceria2}";
+    etiquetaVotosCarroceria3.Text = $"Votos: {votosCarroceria3}";
+
+    double porcentajeCarroceria1 = (double)votosCarroceria1 / totalVotos * 100;
+    double porcentajeCarroceria2 = (double)votosCarroceria2 / totalVotos * 100;
+    double porcentajeCarroceria3 = (double)votosCarroceria3 / totalVotos * 100;
+
+    etiquetaPorcentajeCarroceria1.Text = $"Porcentaje: {porcentajeCarroceria1:F2}%";
+    etiquetaPorcentajeCarroceria2.Text = $"Porcentaje: {porcentajeCarroceria2:F2}%";
+    etiquetaPorcentajeCarroceria3.Text = $"Porcentaje: {porcentajeCarroceria3:F2}%";
+}
